@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+<body>
+<div align="center" style="background-color:#ccc;">
+    <h1>College Information</h1>
+</div>
+
+<div align="center" style="background-color:powderblue;">
+    <form id="formid" method="POST">
+        {% csrf_token%}
+        College Name:<input name="college_Name" id="college_Name" type="text">
+        <br><br>
+        street:<input name="street" id="street" type="text">
+        <br><br>
+        city:<input name="city" id="city" type="text">
+        <br><br>
+
+        <div class="col-md-4">
+            <input type="button" value="submit" name="submit" onclick="college_save1();">
+            <button type="reset" value="Reset">Reset</button>
+            <button onclick="location.href='collegeform'">cancel</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
+<script src="{%static 'jquery.min.js' %}" type="text/javascript"></script>
+<script src="{%static 'collegeapp/college_save.js' %}" type="text/javascript"></script>

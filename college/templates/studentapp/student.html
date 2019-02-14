@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+<body>
+<div  style="background-color:lightblue" align="center">
+   <h1>Student Information</h1>
+
+</div>
+<div align="center" style="background-color:#ccc">
+
+<form id="student" method="post">
+      {% csrf_token%}
+    <br>
+  Name:
+  <input name="name" type="text">
+  <br><br>
+  City:
+  <input name="city" type="text" >
+  <br>  <br>
+
+    Contact No:
+     <input name="Contact no" type="text">
+    <br>   <br>
+
+    College:
+    <input name="College" type="text" >
+    <br>   <br>
+
+    Gender:
+     <input name="gender" type="text" >
+    <br>   <br>
+
+    Branch:
+     <input name="Branch" type="text" >
+    <br><br>
+    <br>
+     <div class="col-md-4">
+        <button type="submit" value="Submit">Submit</button>
+         <button type="reset" value="Reset">Reset</button>
+         <button type="cancel" onclick="/home/bynry05/college/college/templates/base.html">Cancel</button>
+     </div>
+</form></table>
+</div>
+
+<p></p>
+
+</body>
+</html>
