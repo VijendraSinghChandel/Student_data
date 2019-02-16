@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 {% load staticfiles %}
 <body>
 <div align="center" style="background-color:#ccc;">
@@ -13,19 +13,21 @@
              <tr>
                  <td>College Name</td>
                  <td><input name="college_Name" id="college_Name" type="text"></td>
+                 <td><label id="college_name_error" style="font-size: small; color: red; display: none;">*Required Field</label></td>
              </tr>
 
              <tr>
                  <td>Street</td>
                  <td><input name="street" id="street" type="text"></td>
+                 <td><label id="street_error" style="font-size: small; color: red; display: none;">*Required Field</label></td>
              </tr>
 
              <tr>
                  <td>City</td>
                  <td><input name="city" id="city" type="text"> </td>
+                 <td><label id="city_error" style="font-size: small; color: red; display: none;">*Required Field</label></td>
              </tr>
       </table>
-</div>
 <br>
         <div  align="center" style="background-color:#777;">
              <input style="background-color:green" type="button" value="submit" name="submit" onclick="college_save1();">
@@ -34,6 +36,7 @@
         </div>
 
     </form>
+</div>
 </body>
 </html>
 
