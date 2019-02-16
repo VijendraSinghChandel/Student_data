@@ -8,5 +8,4 @@ urlpatterns = [
     url(r'^collegeapp/', include(collegeurl)),
     url(r'^studentapp/', include(studenturl)),
     url(r'^$', 'collegeapp.views.base'),
-
 ]

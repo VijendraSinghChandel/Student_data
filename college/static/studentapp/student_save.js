@@ -1,5 +1,4 @@
 function student_save1(){
-
     $.ajax({
         type:'POST',
         url:'/studentapp/save-student/',
@@ -10,11 +9,11 @@ function student_save1(){
                 alert('error');
             }
             else{
-                alert(response.success );
+                alert(response.success);
             }
 
             console.log(response);
-            alert(response.success );
+            alert(response.success);
         },
             error:function (response)
             {

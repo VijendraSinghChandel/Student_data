@@ -18,7 +18,7 @@ class College(models.Model):
 class Student(models.Model):
     name = models.CharField (max_length=500,blank=False)
     city = models.CharField(max_length=500, blank=False)
-    contact_no = models.IntegerField(blank=False)
+    contact_no = models.IntegerField(max_length=12)
     branch = models.CharField(max_length=100, blank=False)
     gender =models.CharField(max_length=100, blank=False,null=True)
     college = models.ForeignKey (College,null=True, blank=False)
