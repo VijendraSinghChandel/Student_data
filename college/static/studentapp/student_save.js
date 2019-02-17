@@ -8,6 +8,8 @@ else{
      $("#name_error").css("display","none");
 }
 
+
+
 if ($('#contact_no').val() == ''){
     flag=false;
     $("#contact_error").css("display","block");
@@ -16,7 +18,8 @@ else{
      $("#contact_error").css("display","none");
 }
 
-alert($('#college_list_id').val())
+
+
 if ($('#college_list_id').val() == ''){
     flag=false;
     $("#college_error").css("display","block");
@@ -24,6 +27,9 @@ if ($('#college_list_id').val() == ''){
 else{
      $("#college_error").css("display","none");
 }
+
+
+
 if ($('#city').val() == ''){
     flag=false;
     $("#city_error").css("display","block");
@@ -32,6 +38,8 @@ else{
      $("#city_error").css("display","none");
 }
 
+
+
 if ($('#branch').val() == ''){
     flag=false;
     $("#branch_error").css("display","block");
@@ -39,6 +47,8 @@ if ($('#branch').val() == ''){
 else{
      $("#branch_error").css("display","none");
 }
+
+
 if ($('#gender').val() == ''){
     flag=false;
     $("#gender_error").css("display","block");
@@ -46,7 +56,6 @@ if ($('#gender').val() == ''){
 else{
      $("#gender_error").css("display","none");
 }
-
 
 
 if (flag){

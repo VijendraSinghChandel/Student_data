@@ -2,11 +2,16 @@ import json
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
-from .models import College
+from .models import College, Student
 
 
 def base(request):
     return render(request,'base.html')
+
+def datatable(request):
+    students = Student.objects.all()
+    data={'students':students}
+    return render(request,'datatables.html',data)
 
 
 def college(request):
