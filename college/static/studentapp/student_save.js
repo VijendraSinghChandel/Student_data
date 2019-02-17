@@ -9,14 +9,25 @@ else{
 }
 
 
-
 if ($('#contact_no').val() == ''){
     flag=false;
     $("#contact_error").css("display","block");
     }
-else{
-     $("#contact_error").css("display","none");
+    else{
+         $("#contact_error").css("display","none");
+         x= $('#contact_no').val();
+         filter = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+         if (!filter.test(x)) {
+             flag=false;
+             $("#contact_pattern_error").css("display","block");}
+         else{
+             $("#contact_pattern_error").css("display","none");
 }
+
+}
+
+
+
 
 
 
@@ -56,6 +67,15 @@ if ($('#gender').val() == ''){
 else{
      $("#gender_error").css("display","none");
 }
+
+
+
+
+
+//else {
+//    $("#contact_error").css("display","none");
+//}
+
 
 
 if (flag){
