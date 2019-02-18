@@ -10,7 +10,8 @@ def base(request):
 
 def datatable(request):
     students = Student.objects.all()
-    data={'students':students}
+    College_list = College.objects.all()
+    data={'students':students, 'College_list': College_list}
     return render(request,'datatables.html',data)
 
 

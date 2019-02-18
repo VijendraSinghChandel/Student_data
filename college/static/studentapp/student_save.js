@@ -16,19 +16,13 @@ if ($('#contact_no').val() == ''){
     else{
          $("#contact_error").css("display","none");
          x= $('#contact_no').val();
-         filter = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
-         if (!filter.test(x)) {
+//         filter = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+         if (x!=10) {
              flag=false;
              $("#contact_pattern_error").css("display","block");}
          else{
              $("#contact_pattern_error").css("display","none");
-}
-
-}
-
-
-
-
+}}
 
 
 if ($('#college_list_id').val() == ''){

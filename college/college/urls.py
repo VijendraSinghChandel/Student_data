@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^studentapp/', include(studenturl)),
     url(r'^$', 'collegeapp.views.base'),
     url(r'^datatable/','collegeapp.views.datatable'),
+    url(r'^get-student-detail/', 'studentapp.views.get_student_detail'),
 ]
