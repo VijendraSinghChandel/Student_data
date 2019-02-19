@@ -46,7 +46,7 @@ def get_student_detail(request):
     try:
         student_obj = Student.objects.get(id=request.GET.get('student_id'))
         data = {'success': 'true','name':student_obj.name,'city':student_obj.city,'contact_no':student_obj.contact_no,'Branch':student_obj.branch,'college_list_id':student_obj.college.id,'gender':student_obj.gender}
-
+        print data
     except Exception, e:
         print e,str(traceback.print_exc())
         data = {'success': 'false'}
