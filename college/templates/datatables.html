@@ -89,13 +89,13 @@
                 <td>Branch</td>
                     <td><select id="branch_modal" name="Branch">
                         <option value=""> Select Branch</option>
-                    <option>Mechanical</option>
-                    <option>Electrical</option>
-                    <option>Civil</option>
-                    <option>Information Technology</option>
-                    <option>Computer Science</option>
-                    <option>Electrical & Telecommunication</option>
-                    <option>Aeronotical</option>
+                    <option value="1">Mechanical</option>
+                    <option value="2">Electrical</option>
+                    <option value="3">Civil</option>
+                    <option value="4">Information Technology</option>
+                    <option value="5">Computer Science</option>
+                    <option value="6">Electrical & Telecommunication</option>
+                    <option value="7">Aeronotical</option>
                     </select>
                     </td>
                 <td><label id="branch_error" style="font-size: small; color: red; display: none;">*Required Field</label></td>
@@ -111,13 +111,19 @@
                         </select>
                     </td>
                 <td><label id="college_error" style="font-size: small; color: red; display: none;">*Required Field</label></td>
-            <tr>
-                <td> Select Gender</td>
-                    <td><input name="gender" type="radio" value="female" >Female
-                    <input name="gender" type="radio" value="male" class="gender_modal">Male
-                    <input name="gender" type="radio" value="other"class="gender_modal">Other</td>
-            <td><label id="gender_error" style="font-size: small; color: red; display: none;">*Required Field</label></td>
             </tr>
+
+            <tr>
+                 <form id="mainForm" name="mainForm">
+                <td> Select Gender</td>
+                <td><input name="gender" type="radio" value="female" checked/>Female
+                    <input  name="gender" type="radio" value="male" />Male
+                    <input name="gender" type="radio" value="other"/>Other</td>
+
+            <td><label id="gender_error" style="font-size: small; color: red; display: none;">*Required Field</label></td>
+            </form>
+                 <span id="result"></span>
+        </tr>
 
         </table>
 <br>
