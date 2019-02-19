@@ -54,22 +54,20 @@ def get_student_detail(request):
 
 
 
-
-
-
-
-
-
-# 'contact-no':student_obj.contact_no,'Branch':student_obj.branch,'college_list_id':student_obj.college,'gender':student_obj.gender
-
-
-
-
-
-# 'Contact-no':student_obj.contact_no,'Branch':student_obj.branch,'college_list_id':student_obj.college,'gender':student_obj.gender
-
-
-
-
-
-
+@csrf_exempt
+def update_student_detail(request):
+    print(request.GET)
+    try:
+        student.id(
+            name=request.POST.get('name.id'),
+            city=request.POST.get('city.id'),
+            contact_no=request.POST.get('Contact-no.id'),
+            branch=request.POST.get('Branch.id'),
+            gender=request.POST.get('gender.id'),
+            college=College.objects.get(id=request.POST.get('college_list_id'))
+        ).save()
+        data = {'success': 'send'}
+    except Exception, e:
+        print e, str(traceback.print_exc())
+        data = {'success': 'error'}
+    return HttpResponse(json.dumps(data), content_type='application/json')

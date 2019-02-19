@@ -6,17 +6,18 @@ from .models import College, Student
 
 
 def base(request):
-    return render(request,'base.html')
+    return render(request, 'base.html')
+
 
 def datatable(request):
     students = Student.objects.all()
     College_list = College.objects.all()
-    data={'students':students, 'College_list': College_list}
-    return render(request,'datatables.html',data)
+    data = {'students': students, 'College_list': College_list}
+    return render(request, 'datatables.html', data)
 
 
 def college(request):
-    return render(request,'collegeapp/college.html')
+    return render(request, 'collegeapp/college.html')
 
 
 @csrf_exempt
