@@ -27,6 +27,22 @@ function get_student_data(student_id){
 
 }
 
+function update_student_data(student_id){
+        $.ajax({
+        type:'POST',
+        url:'/update-student-detail/',
+        data : {'student_id':student_id},
+        success:function (response)
+        {
+           console.log(response);
+        },
+            error:function (response)
+            {
+            }
+    })
+
+}
+
 function validate_data(){
 var flag=true;
 if ($('#name_modal').val() == ''){

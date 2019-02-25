@@ -58,15 +58,16 @@ def get_student_detail(request):
 def update_student_detail(request):
     print(request.GET)
     try:
-        student.id(
+         update_student_obj = Student(
             name=request.POST.get('name.id'),
             city=request.POST.get('city.id'),
             contact_no=request.POST.get('Contact-no.id'),
             branch=request.POST.get('Branch.id'),
             gender=request.POST.get('gender.id'),
             college=College.objects.get(id=request.POST.get('college_list_id'))
-        ).save()
-        data = {'success': 'send'}
+          )
+         update_student_obj.save();
+         data = {'success': 'send'}
     except Exception, e:
         print e, str(traceback.print_exc())
         data = {'success': 'error'}
