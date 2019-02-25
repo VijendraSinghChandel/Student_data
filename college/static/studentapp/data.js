@@ -7,6 +7,7 @@ function get_student_data(student_id){
         {
             if (response.success == 'true'){
                 $("#name_modal").val(response.name);
+                $("#student_id").val(response.student_id);
                 $("#city_modal").val(response.city);
                 $("#contact_no_modal").val(response.contact_no);
                 $("#college_list_id_modal").val(response.college_list_id);
@@ -105,7 +106,22 @@ if ($('#gender_modal').val() == ''){
     }
 else{
      $("#gender_error").css("display","none");
-}
+}}
 
 
+
+function update_student_detail(){
+        $.ajax({
+        type:'POST',
+        url:'/update_student_data/',
+        data : $('#student').serialize(),
+        success:function (response)
+        {
+            console.log(response);
+            alert(response.success);
+        },
+            error:function (response)
+            {
+            }
+    })
 }

@@ -130,7 +130,6 @@
                         </tr>
 
                         <tr>
-
                             <td> Select Gender</td>
                             <td><input name="gender" type="radio" value="female"/>Female
                                 <input name="gender" type="radio" value="male"/>Male
@@ -141,13 +140,17 @@
                                 Field</label></td>
                         </tr>
 
+                        <tr>
+                            <td></td>
+                            <td><input id="student_id" name="id" type="hidden"></td>
+                        </tr>
                     </table>
                     <br>
                 </form>
             </div>
             <div class="modal-footer">
                 <div align="center" style="background-color:#777">
-                    <input name="submit" onclick="validate_data();" type="button" value="Update">
+                    <input name="submit" onclick="update_student_detail();" type="button" value="Update">
                     <a href="/datatable">
                         <button type="button">Cancel</button>
                     </a>

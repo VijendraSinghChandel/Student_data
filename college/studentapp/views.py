@@ -45,7 +45,7 @@ def get_student_detail(request):
     print(request.GET)
     try:
         student_obj = Student.objects.get(id=request.GET.get('student_id'))
-        data = {'success': 'true','name':student_obj.name,'city':student_obj.city,'contact_no':student_obj.contact_no,'Branch':student_obj.branch,'college_list_id':student_obj.college.id,'gender':student_obj.gender}
+        data = {'success': 'true','name':student_obj.name,'city':student_obj.city,'contact_no':student_obj.contact_no,'Branch':student_obj.branch,'college_list_id':student_obj.college.id,'gender':student_obj.gender,'student_id':student_obj.id}
         print data
     except Exception, e:
         print e,str(traceback.print_exc())
@@ -56,8 +56,9 @@ def get_student_detail(request):
 
 @csrf_exempt
 def update_student_detail(request):
-    print(request.GET)
+    print(request.POST)
     try:
+<<<<<<< HEAD
          update_student_obj = Student(
             name=request.POST.get('name.id'),
             city=request.POST.get('city.id'),
@@ -68,6 +69,17 @@ def update_student_detail(request):
           )
          update_student_obj.save();
          data = {'success': 'send'}
+=======
+        student=Student.objects.get(id=request.POST.get('id'))
+        student.name=request.POST.get('name')
+        student.city=request.POST.get('city')
+        student.contact_no=request.POST.get('contact-no')
+        student.branch=request.POST.get('Branch')
+        student.gender=request.POST.get('gender')
+        student.college=College.objects.get(id=request.POST.get('college_list_id'))
+        student.save()
+        data = {'success': 'send'}
+>>>>>>> 93f3de23a48944c109302fc2488782c495889a0d
     except Exception, e:
         print e, str(traceback.print_exc())
         data = {'success': 'error'}
