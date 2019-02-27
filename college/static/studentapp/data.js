@@ -13,7 +13,6 @@ function get_student_data(student_id){
                 $("#college_list_id_modal").val(response.college_list_id);
                 $("#branch_modal").val(response.Branch);
                 $("input[name=gender][value=" + response.gender + "]").attr('checked', 'checked');
-
             }
             else{
                 alert(response.success);
@@ -115,6 +114,22 @@ function update_student_detail(){
         type:'POST',
         url:'/update_student_data/',
         data : $('#student').serialize(),
+        success:function (response)
+        {
+            console.log(response);
+            alert(response.success);
+        },
+            error:function (response)
+            {
+            }
+    })
+}
+
+function delete_student(){
+        $.ajax({
+        type:'GET',
+        url:'/delete_data/',
+        data : {'id': student_id},
         success:function (response)
         {
             console.log(response);

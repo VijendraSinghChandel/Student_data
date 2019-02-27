@@ -22,7 +22,7 @@ class Student(models.Model):
     branch = models.CharField(max_length=100, blank=False)
     gender =models.CharField(max_length=100, blank=False,null=True)
     college = models.ForeignKey (College,null=True, blank=False)
-
+    is_deleted = models.BooleanField(choices=IS_DELETED, default=False)
 
     def __unicode__(self):
         return unicode(self.name)

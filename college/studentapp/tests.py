@@ -1,15 +1,15 @@
 class maths:
-    def __init__(self, x, y):
-        self.a = y
-        self.b = x
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
 
     def add(self):
         return self.a + self.b;
 
     def sub(self):
-        return self.a - self.b;
+        return self.a * self.b;
 
-    def save(self):
+    # def save(self):
         #save in to database
 
     # def __str__(self):
@@ -21,3 +21,4 @@ class maths:
 
 
 print(maths(100,20).add())
+print(maths(100,20).sub())

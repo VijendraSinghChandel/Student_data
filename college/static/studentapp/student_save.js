@@ -79,13 +79,6 @@ if (flag){
         data:$('#student').serialize(),
         success:function (response)
         {
-//            if (response.success == 'error'){
-//                alert('error');
-//            }
-//            else{
-//                alert(response.success);
-//            }
-
             console.log(response);
             alert(response.success);
         },

@@ -58,18 +58,6 @@ def get_student_detail(request):
 def update_student_detail(request):
     print(request.POST)
     try:
-<<<<<<< HEAD
-         update_student_obj = Student(
-            name=request.POST.get('name.id'),
-            city=request.POST.get('city.id'),
-            contact_no=request.POST.get('Contact-no.id'),
-            branch=request.POST.get('Branch.id'),
-            gender=request.POST.get('gender.id'),
-            college=College.objects.get(id=request.POST.get('college_list_id'))
-          )
-         update_student_obj.save();
-         data = {'success': 'send'}
-=======
         student=Student.objects.get(id=request.POST.get('id'))
         student.name=request.POST.get('name')
         student.city=request.POST.get('city')
@@ -79,7 +67,20 @@ def update_student_detail(request):
         student.college=College.objects.get(id=request.POST.get('college_list_id'))
         student.save()
         data = {'success': 'send'}
->>>>>>> 93f3de23a48944c109302fc2488782c495889a0d
+    except Exception, e:
+        print e, str(traceback.print_exc())
+        data = {'success': 'error'}
+    return HttpResponse(json.dumps(data), content_type='application/json')
+
+
+@csrf_exempt
+def delete_student_detail(request):
+    print(request.GET)
+    try:
+        user = Student.objects.get(id=request.POST.get('id'))
+        user.is_deleted = True
+        user.save()
+        data = {'success': 'successfully deleted'}
     except Exception, e:
         print e, str(traceback.print_exc())
         data = {'success': 'error'}
